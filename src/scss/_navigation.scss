@@ -1,0 +1,150 @@
+.navigation {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  background-color: $primaryColor3;
+  width: 100%;
+
+  @media (min-width: 1200px) {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5rem;
+    max-width: 60rem;
+    background-color: transparent;
+  }
+
+  &.menu-open {
+    .open-menu {
+      display: none;
+    }
+
+    .close-menu {
+      left: 2rem;
+      right: auto;
+      position: absolute;
+      margin-top: 4.1rem;
+    }
+
+    .logo {
+      display: none;
+      @media (min-width: 1200px) {
+        display: block;
+      }
+    }
+
+    .nav-list {
+      display: flex;
+    }
+  }
+
+  .nav-btns {
+    @media (min-width: 1200px) {
+      display: none;
+    }
+
+    .open-menu {
+      left: 2rem;
+      right: auto;
+      position: absolute;
+      margin-top: 3rem;
+    }
+
+    .close-menu {
+      left: 2rem;
+      right: auto;
+      position: absolute;
+      margin-top: -1rem;
+    }
+  }
+
+  .logo {
+    position: absolute;
+    width: 6rem;
+    height: 1.8rem;
+    margin: 8rem auto 0 auto;
+    display: block;
+    left: 0;
+    right: 0;
+
+    @media (min-width: 1200px) {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+    }
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding: 3rem 2rem;
+    animation: fromLeftToRight 0.5s ease-in-out;
+
+    @media (min-width: 1200px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 60%;
+      background-color: transparent;
+      animation: none;
+    }
+
+    .list-item {
+      list-style: none;
+      margin-right: 1rem;
+
+      .list-link {
+        text-decoration: none;
+        position: relative;
+        color: $primaryColor2;
+        font-size: 1.8rem;
+
+        @media (min-width: 1200px) {
+          color: $primaryColor3;
+          font-size: 2rem;
+        }
+
+        &:hover {
+          &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            margin: 0 auto;
+            bottom: -2rem;
+            left: 0;
+            right: 0;
+            width: 60%; /* Adjust the width as needed */
+            height: 0.3rem; /* Set the desired thickness */
+            background-color: $primaryColor3; /* Set the desired color */
+            transition: all 1s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+  @keyframes fromLeftToRight {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fromRightToLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}

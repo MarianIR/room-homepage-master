@@ -1,0 +1,145 @@
+@import "variables", "reset", "navigation";
+
+body {
+  overflow-x: hidden;
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  .main-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    @media (min-width: 1200px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 65vh;
+    }
+
+    .illustration-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      @media (min-width: 1200px) {
+        height: 100%;
+        width: 64.8vw;
+      }
+      .illustration {
+        top: 0;
+        width: 100%;
+        min-height: 30vh;
+        height: auto;
+        @media (min-width: 1200px) {
+          min-height: 100%;
+        }
+      }
+
+      .change-page-box {
+        background-color: $primaryColor2;
+        width: 10rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0.5rem;
+        left: auto;
+        right: 0;
+        position: absolute;
+        @media (min-width: 1200px) {
+          margin-right: 30vw;
+        }
+        .change-left-btn {
+          background-color: transparent;
+          border: none;
+          padding: 1rem 0.8rem;
+          cursor: pointer;
+          .left-arrow {
+            height: 2rem;
+          }
+        }
+        .change-right-btn {
+          background-color: transparent;
+          border: none;
+          padding: 1rem 0.8rem;
+          cursor: pointer;
+          .right-arrow {
+            height: 2rem;
+          }
+        }
+      }
+    }
+    .article-section {
+      padding: 2rem;
+      @media (min-width: 1200px) {
+        padding-right: 5rem;
+      }
+      .main-heading {
+        font-size: clamp(3rem, 6vw, 4rem);
+        max-width: 45rem;
+        padding: 1rem 0;
+        color: $primaryColor4;
+      }
+      .description-paragraph {
+        color: $primaryColor1;
+        max-width: 55rem;
+        font-size: clamp(1.2rem, 6vw, 1.8rem);
+        line-height: 1.5;
+      }
+      .shop-now-btn {
+        background-color: transparent;
+        border: none;
+        font-size: 1.6rem;
+        color: $primaryColor2;
+        text-transform: uppercase;
+        padding: 2rem 0;
+        font-weight: bold;
+        letter-spacing: 0.8rem;
+        cursor: pointer;
+        .arrow {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+  .furniture-section {
+    @media (min-width: 1200px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 35vh;
+    }
+    .dark-furniture-image {
+    }
+    .about-furniture {
+      padding: 2rem;
+      @media (min-width: 1200px) {
+        padding-top: 7rem;
+      }
+      .furniture-heading {
+        text-transform: uppercase;
+        font-size: clamp(1.4rem, 6vw, 2rem);
+        letter-spacing: 0.3rem;
+        padding: 1rem 0;
+      }
+      .furniture-paragraph {
+        color: $primaryColor1;
+        max-width: 60rem;
+        font-size: clamp(1.2rem, 6vw, 1.8rem);
+        line-height: 1.5;
+        padding: 1rem 0;
+      }
+    }
+    .dark-furniture-image,
+    .light-furniture-image {
+      width: 100%;
+      height: auto;
+
+      @media (min-width: 1200px) {
+        width: 30%;
+      }
+    }
+  }
+}

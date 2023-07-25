@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "League Spartan", sans-serif;
+  font-size: 10px;
+}
+
+.navigation {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  background-color: hsl(0, 0%, 100%);
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  .navigation {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5rem;
+    max-width: 60rem;
+    background-color: transparent;
+  }
+}
+.navigation.menu-open .open-menu {
+  display: none;
+}
+.navigation.menu-open .close-menu {
+  left: 2rem;
+  right: auto;
+  position: absolute;
+  margin-top: 4.1rem;
+}
+.navigation.menu-open .logo {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .navigation.menu-open .logo {
+    display: block;
+  }
+}
+.navigation.menu-open .nav-list {
+  display: flex;
+}
+@media (min-width: 1200px) {
+  .navigation .nav-btns {
+    display: none;
+  }
+}
+.navigation .nav-btns .open-menu {
+  left: 2rem;
+  right: auto;
+  position: absolute;
+  margin-top: 3rem;
+}
+.navigation .nav-btns .close-menu {
+  left: 2rem;
+  right: auto;
+  position: absolute;
+  margin-top: -1rem;
+}
+.navigation .logo {
+  position: absolute;
+  width: 6rem;
+  height: 1.8rem;
+  margin: 8rem auto 0 auto;
+  display: block;
+  left: 0;
+  right: 0;
+}
+@media (min-width: 1200px) {
+  .navigation .logo {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+  }
+}
+.navigation .nav-list {
+  display: none;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 3rem 2rem;
+  animation: fromLeftToRight 0.5s ease-in-out;
+}
+@media (min-width: 1200px) {
+  .navigation .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+    background-color: transparent;
+    animation: none;
+  }
+}
+.navigation .nav-list .list-item {
+  list-style: none;
+  margin-right: 1rem;
+}
+.navigation .nav-list .list-item .list-link {
+  text-decoration: none;
+  position: relative;
+  color: hsl(0, 0%, 0%);
+  font-size: 1.8rem;
+}
+@media (min-width: 1200px) {
+  .navigation .nav-list .list-item .list-link {
+    color: hsl(0, 0%, 100%);
+    font-size: 2rem;
+  }
+}
+.navigation .nav-list .list-item .list-link:hover::after {
+  content: "";
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  bottom: -2rem;
+  left: 0;
+  right: 0;
+  width: 60%; /* Adjust the width as needed */
+  height: 0.3rem; /* Set the desired thickness */
+  background-color: hsl(0, 0%, 100%); /* Set the desired color */
+  transition: all 1s ease-in-out;
+}
+@keyframes fromLeftToRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes fromRightToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+}
+.hero .main-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+@media (min-width: 1200px) {
+  .hero .main-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 65vh;
+  }
+}
+.hero .main-section .illustration-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+@media (min-width: 1200px) {
+  .hero .main-section .illustration-container {
+    height: 100%;
+    width: 64.8vw;
+  }
+}
+.hero .main-section .illustration-container .illustration {
+  top: 0;
+  width: 100%;
+  min-height: 30vh;
+  height: auto;
+}
+@media (min-width: 1200px) {
+  .hero .main-section .illustration-container .illustration {
+    min-height: 100%;
+  }
+}
+.hero .main-section .illustration-container .change-page-box {
+  background-color: hsl(0, 0%, 0%);
+  width: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0.5rem;
+  left: auto;
+  right: 0;
+  position: absolute;
+}
+@media (min-width: 1200px) {
+  .hero .main-section .illustration-container .change-page-box {
+    margin-right: 30vw;
+  }
+}
+.hero .main-section .illustration-container .change-page-box .change-left-btn {
+  background-color: transparent;
+  border: none;
+  padding: 1rem 0.8rem;
+  cursor: pointer;
+}
+.hero .main-section .illustration-container .change-page-box .change-left-btn .left-arrow {
+  height: 2rem;
+}
+.hero .main-section .illustration-container .change-page-box .change-right-btn {
+  background-color: transparent;
+  border: none;
+  padding: 1rem 0.8rem;
+  cursor: pointer;
+}
+.hero .main-section .illustration-container .change-page-box .change-right-btn .right-arrow {
+  height: 2rem;
+}
+.hero .main-section .article-section {
+  padding: 2rem;
+}
+@media (min-width: 1200px) {
+  .hero .main-section .article-section {
+    padding-right: 5rem;
+  }
+}
+.hero .main-section .article-section .main-heading {
+  font-size: clamp(3rem, 6vw, 4rem);
+  max-width: 45rem;
+  padding: 1rem 0;
+  color: hsl(0, 0%, 27%);
+}
+.hero .main-section .article-section .description-paragraph {
+  color: hsl(0, 0%, 63%);
+  max-width: 55rem;
+  font-size: clamp(1.2rem, 6vw, 1.8rem);
+  line-height: 1.5;
+}
+.hero .main-section .article-section .shop-now-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1.6rem;
+  color: hsl(0, 0%, 0%);
+  text-transform: uppercase;
+  padding: 2rem 0;
+  font-weight: bold;
+  letter-spacing: 0.8rem;
+  cursor: pointer;
+}
+.hero .main-section .article-section .shop-now-btn .arrow {
+  margin-left: 2rem;
+}
+@media (min-width: 1200px) {
+  .hero .furniture-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 35vh;
+  }
+}
+.hero .furniture-section .about-furniture {
+  padding: 2rem;
+}
+@media (min-width: 1200px) {
+  .hero .furniture-section .about-furniture {
+    padding-top: 7rem;
+  }
+}
+.hero .furniture-section .about-furniture .furniture-heading {
+  text-transform: uppercase;
+  font-size: clamp(1.4rem, 6vw, 2rem);
+  letter-spacing: 0.3rem;
+  padding: 1rem 0;
+}
+.hero .furniture-section .about-furniture .furniture-paragraph {
+  color: hsl(0, 0%, 63%);
+  max-width: 60rem;
+  font-size: clamp(1.2rem, 6vw, 1.8rem);
+  line-height: 1.5;
+  padding: 1rem 0;
+}
+.hero .furniture-section .dark-furniture-image,
+.hero .furniture-section .light-furniture-image {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 1200px) {
+  .hero .furniture-section .dark-furniture-image,
+  .hero .furniture-section .light-furniture-image {
+    width: 30%;
+  }
+}/*# sourceMappingURL=main.css.map */
